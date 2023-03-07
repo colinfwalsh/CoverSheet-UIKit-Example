@@ -1,0 +1,22 @@
+PODS:
+  - CoverSheet (0.1.0)
+
+DEPENDENCIES:
+  - CoverSheet (from `https://github.com/colinfwalsh/CoverSheet`, branch `develop-cw-handleFixes`)
+
+EXTERNAL SOURCES:
+  CoverSheet:
+    :branch: develop-cw-handleFixes
+    :git: https://github.com/colinfwalsh/CoverSheet
+
+CHECKOUT OPTIONS:
+  CoverSheet:
+    :commit: 80cd643fb78d12428260df697f987221c493b97c
+    :git: https://github.com/colinfwalsh/CoverSheet
+
+SPEC CHECKSUMS:
+  CoverSheet: 4940949665cb6e98857555eab16f5f577471561f
+
+PODFILE CHECKSUM: c438f7d98b85cbf093f4f8d00d1f367cc93519f9
+
+COCOAPODS: 1.12.0

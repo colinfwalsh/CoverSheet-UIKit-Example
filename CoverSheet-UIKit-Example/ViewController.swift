@@ -17,6 +17,7 @@ class ViewController: CoverSheetController {
         super.viewDidLoad()
         
         configure(inner: innerVC, sheet: sheetVC)
+        overrideStates([.minimized, .normal, .full, .cover])
         updateSheet(shouldBlur: false, backgroundColor: .white)
     }
     

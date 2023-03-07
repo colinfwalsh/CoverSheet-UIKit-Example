@@ -1,0 +1,6 @@
+framework module CoverSheet {
+  umbrella header "CoverSheet-umbrella.h"
+
+  export *
+  module * { export * }
+}

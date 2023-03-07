@@ -13,10 +13,12 @@
 		BD7A002D29B6710300DD4D9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7A002B29B6710300DD4D9C /* Main.storyboard */; };
 		BD7A002F29B6710400DD4D9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD7A002E29B6710400DD4D9C /* Assets.xcassets */; };
 		BD7A003229B6710400DD4D9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7A003029B6710400DD4D9C /* LaunchScreen.storyboard */; };
-		BD7A004429B6735C00DD4D9C /* CoverSheet in Frameworks */ = {isa = PBXBuildFile; productRef = BD7A004329B6735C00DD4D9C /* CoverSheet */; };
+		C3F5BE0F61A3EAC129ABC62A /* Pods_CoverSheet_UIKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9072E31A6762574F6006D483 /* Pods_CoverSheet_UIKit_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63239DCE9C79152F920D282D /* Pods-CoverSheet-UIKit-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoverSheet-UIKit-Example.debug.xcconfig"; path = "Target Support Files/Pods-CoverSheet-UIKit-Example/Pods-CoverSheet-UIKit-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		9072E31A6762574F6006D483 /* Pods_CoverSheet_UIKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoverSheet_UIKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7A002229B6710300DD4D9C /* CoverSheet-UIKit-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoverSheet-UIKit-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7A002529B6710300DD4D9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD7A002729B6710300DD4D9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +28,7 @@
 		BD7A003129B6710400DD4D9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD7A003329B6710400DD4D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD7A003B29B6715D00DD4D9C /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../CoverSheet/Package.swift; sourceTree = "<group>"; };
+		C69A9EF2831D361AC757532D /* Pods-CoverSheet-UIKit-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoverSheet-UIKit-Example.release.xcconfig"; path = "Target Support Files/Pods-CoverSheet-UIKit-Example/Pods-CoverSheet-UIKit-Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD7A004429B6735C00DD4D9C /* CoverSheet in Frameworks */,
+				C3F5BE0F61A3EAC129ABC62A /* Pods_CoverSheet_UIKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 				BD7A002429B6710300DD4D9C /* CoverSheet-UIKit-Example */,
 				BD7A002329B6710300DD4D9C /* Products */,
 				BD7A003A29B6712100DD4D9C /* Frameworks */,
+				FA03256DDB0121B88C682763 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,8 +79,18 @@
 			isa = PBXGroup;
 			children = (
 				BD7A003B29B6715D00DD4D9C /* Package.swift */,
+				9072E31A6762574F6006D483 /* Pods_CoverSheet_UIKit_Example.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA03256DDB0121B88C682763 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63239DCE9C79152F920D282D /* Pods-CoverSheet-UIKit-Example.debug.xcconfig */,
+				C69A9EF2831D361AC757532D /* Pods-CoverSheet-UIKit-Example.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,18 +100,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD7A003629B6710400DD4D9C /* Build configuration list for PBXNativeTarget "CoverSheet-UIKit-Example" */;
 			buildPhases = (
+				5EB7FB194A673C0385232B23 /* [CP] Check Pods Manifest.lock */,
 				BD7A001E29B6710300DD4D9C /* Sources */,
 				BD7A001F29B6710300DD4D9C /* Frameworks */,
 				BD7A002029B6710300DD4D9C /* Resources */,
+				D0871C8D3C186C8F716677A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "CoverSheet-UIKit-Example";
-			packageProductDependencies = (
-				BD7A004329B6735C00DD4D9C /* CoverSheet */,
-			);
 			productName = "CoverSheet-UIKit-Example";
 			productReference = BD7A002229B6710300DD4D9C /* CoverSheet-UIKit-Example.app */;
 			productType = "com.apple.product-type.application";
@@ -126,9 +139,6 @@
 				Base,
 			);
 			mainGroup = BD7A001929B6710300DD4D9C;
-			packageReferences = (
-				BD7A004229B6735C00DD4D9C /* XCRemoteSwiftPackageReference "CoverSheet" */,
-			);
 			productRefGroup = BD7A002329B6710300DD4D9C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -150,6 +160,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EB7FB194A673C0385232B23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoverSheet-UIKit-Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0871C8D3C186C8F716677A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoverSheet-UIKit-Example/Pods-CoverSheet-UIKit-Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoverSheet-UIKit-Example/Pods-CoverSheet-UIKit-Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoverSheet-UIKit-Example/Pods-CoverSheet-UIKit-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BD7A001E29B6710300DD4D9C /* Sources */ = {
@@ -234,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -288,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -300,11 +352,13 @@
 		};
 		BD7A003729B6710400DD4D9C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63239DCE9C79152F920D282D /* Pods-CoverSheet-UIKit-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q844VW9UW4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CoverSheet-UIKit-Example/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -312,6 +366,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -327,11 +382,13 @@
 		};
 		BD7A003829B6710400DD4D9C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C69A9EF2831D361AC757532D /* Pods-CoverSheet-UIKit-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q844VW9UW4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CoverSheet-UIKit-Example/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -339,6 +396,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,25 +432,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		BD7A004229B6735C00DD4D9C /* XCRemoteSwiftPackageReference "CoverSheet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/colinfwalsh/CoverSheet";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		BD7A004329B6735C00DD4D9C /* CoverSheet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BD7A004229B6735C00DD4D9C /* XCRemoteSwiftPackageReference "CoverSheet" */;
-			productName = CoverSheet;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BD7A001A29B6710300DD4D9C /* Project object */;
 }
