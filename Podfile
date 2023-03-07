@@ -6,6 +6,6 @@ target 'CoverSheet-UIKit-Example' do
   use_frameworks!
 
   # Pods for CoverSheet-UIKit-Example
-  pod 'CoverSheet', :git => 'https://github.com/colinfwalsh/CoverSheet', :branch => 'develop-cw-handleFixes'
+  pod 'CoverSheet', :git => 'https://github.com/colinfwalsh/CoverSheet', :branch => 'develop-cw-animationUpdates'
 
 end

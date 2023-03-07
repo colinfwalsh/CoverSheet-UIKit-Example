@@ -17,7 +17,8 @@ class ViewController: CoverSheetController {
         super.viewDidLoad()
         
         configure(inner: innerVC, sheet: sheetVC)
-        overrideStates([.minimized, .normal, .full, .cover])
+        overrideStates([.normal, .minimized, .cover, .full, .custom(0.1)])
+        overrideAnimationValues(timing: 0.25, options: [.allowUserInteraction], springDamping: 1.5)
         updateSheet(shouldBlur: false, backgroundColor: .white)
     }
     
