@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CoverSheet:
-    :commit: 80cd643fb78d12428260df697f987221c493b97c
+    :commit: 431c242566b8766dc6f025df1881361a4a062818
     :git: https://github.com/colinfwalsh/CoverSheet
 
 SPEC CHECKSUMS:
