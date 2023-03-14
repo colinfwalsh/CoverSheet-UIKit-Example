@@ -6,9 +6,15 @@
 //
 
 import Foundation
+import Combine
 import SwiftUI
 
-public protocol Manager: ObservableObject, CoverSheetDelegate {
-    var sheetState: SheetState { get set }
-    var stateConstant: CGFloat { get }
+public protocol Manager: ObservableObject {
+    associatedtype EnumValue: RawRepresentable where EnumValue.RawValue == CGFloat
+    
+    var currentState: EnumValue { get set }
+    var currentStatePublisher: Published<EnumValue>.Publisher { get }
+    var currentStateConstant: CGFloat { get }
+    
+    init()
 }

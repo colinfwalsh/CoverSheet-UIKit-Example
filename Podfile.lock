@@ -1,22 +1,22 @@
 PODS:
-  - CoverSheet (0.1.0)
+  - CoverSheet (0.1.2)
 
 DEPENDENCIES:
-  - CoverSheet (from `https://github.com/colinfwalsh/CoverSheet`, branch `develop-cw-animationUpdates`)
+  - CoverSheet (from `https://github.com/colinfwalsh/CoverSheet`, branch `main`)
 
 EXTERNAL SOURCES:
   CoverSheet:
-    :branch: develop-cw-animationUpdates
+    :branch: main
     :git: https://github.com/colinfwalsh/CoverSheet
 
 CHECKOUT OPTIONS:
   CoverSheet:
-    :commit: 945ad608672769296e0ad3addb23c2bb8328827b
+    :commit: 495cfd418ef16fd84c91a9e56a18669dd942e47f
     :git: https://github.com/colinfwalsh/CoverSheet
 
 SPEC CHECKSUMS:
-  CoverSheet: 4940949665cb6e98857555eab16f5f577471561f
+  CoverSheet: 666c31abd1397ee848f2d50ed3eb29b26228f622
 
-PODFILE CHECKSUM: e6e3043f69d32e829e61cf9c44a3f443b3ccc2e6
+PODFILE CHECKSUM: 36d872246534e38eca7b2aad81955597ada3ab96
 
 COCOAPODS: 1.12.0

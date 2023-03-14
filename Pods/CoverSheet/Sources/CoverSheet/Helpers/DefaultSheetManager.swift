@@ -9,17 +9,24 @@
 import Foundation
 import Combine
 
-public class DefaultSheetManager: Manager {
+public class DefaultSheetManager: Manager, CoverSheetDelegate {
+    public typealias EnumValue = DefaultSheetState
+    
     @Published
-    public var sheetState: SheetState = .normal
+    public var currentState: EnumValue = .hidden
     
-    public var stateConstant: CGFloat {
-        return sheetState.rawValue
+    @Published
+    public var sheetHeight: CGFloat = 0.0
+    
+    public var currentStatePublisher: Published<EnumValue>.Publisher { $currentState }
+    
+    public func coverSheet(sheetHeight: CGFloat) {
+        self.sheetHeight = sheetHeight
     }
     
-    public func coverSheet(currentState: SheetState) {
-        self.sheetState = currentState
+    public var currentStateConstant: CGFloat {
+        return currentState.rawValue
     }
     
-    public init() {}
+    public required init() {}
 }

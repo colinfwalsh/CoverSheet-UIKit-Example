@@ -10,16 +10,16 @@ import UIKit
 import SwiftUI
 import Combine
 
-open class CoverSheetController: UIViewController, UIGestureRecognizerDelegate {
+open class CoverSheetController<ViewManager: Manager,
+                                EnumValue: RawRepresentable & Equatable>: UIViewController,
+                                                                          UIGestureRecognizerDelegate where EnumValue.RawValue == CGFloat {
     
-    @Published
-    private var currentState: SheetState = .normal
+    @ObservedObject
+    private var manager: ViewManager = ViewManager()
     
-    private var states: [SheetState] = []
+    private var states: [EnumValue] = []
     
     private var isTransitioning: Bool = false
-    
-    private var initialLoad: Bool = true
     
     private var blurEffectEnabled: Bool = false
     
@@ -31,18 +31,28 @@ open class CoverSheetController: UIViewController, UIGestureRecognizerDelegate {
     
     public weak var delegate: CoverSheetDelegate?
     
-    public init(states: [SheetState] = [.minimized, .normal, .full],
-         shouldUseEffect: Bool = false,
-         sheetColor: UIColor = .white) {
-        self.states = states.sorted(by: >)
+    public init(states: [EnumValue] = [],
+                shouldUseEffect: Bool = false,
+                sheetColor: UIColor = .white) {
+        self.states = states.sorted(by: { $0.rawValue < $1.rawValue} )
         self.blurEffectEnabled = shouldUseEffect
         self.sheetColor = sheetColor
         super.init(nibName: nil, bundle: nil)
     }
     
+    public convenience init(manager: ViewManager,
+                            states: [EnumValue],
+                            shouldUseEffect: Bool = false,
+                            sheetColor: UIColor = .white) {
+        self.init(states: states)
+        self.manager = manager
+        self.blurEffectEnabled = shouldUseEffect
+        self.sheetColor = sheetColor
+    }
+    
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.states = [.minimized, .normal, .full]
+        self.states = []
     }
     
     private var insets: UIEdgeInsets {
@@ -60,7 +70,7 @@ open class CoverSheetController: UIViewController, UIGestureRecognizerDelegate {
     
     private var offset: CGFloat {
         let maxHeight = self.view.frame.height - 100
-        return maxHeight - (maxHeight * currentState.rawValue)
+        return maxHeight - (maxHeight * manager.currentState.rawValue)
     }
     
     private lazy var handlePadding: UIView = {
@@ -127,90 +137,30 @@ open class CoverSheetController: UIViewController, UIGestureRecognizerDelegate {
         setupInnerView()
         setupBottomSheet()
         
-        $currentState
+        setupObservers()
+    }
+    
+    private func setupObservers() {
+        cancellables.removeAll()
+        
+        manager
+            .currentStatePublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
                 guard let self = self
                 else { return }
                 
-                self.delegate?.coverSheet(currentState: $0)
+                let newHeight = self.view.frame.height * $0.rawValue
+                self.delegate?.coverSheet(sheetHeight: newHeight)
                 
-                guard !self.isTransitioning && !self.initialLoad
-                else {
-                    self.initialLoad = false
-                    return }
+                guard !self.isTransitioning
+                else { return }
                 
                 self.animateSheet()
-        }
-        .store(in: &cancellables)
-    }
-}
-
-// MARK: Public methods
-extension CoverSheetController {
-    public func configure(inner: UIViewController, sheet: UIViewController) {
-        innerContentViewController.configure(inner)
-        sheetContentViewController.configure(sheet)
+            }
+            .store(in: &cancellables)
     }
     
-    public func configure(inner: some View, sheet: some View) {
-        innerContentViewController.configure(inner)
-        sheetContentViewController.configure(sheet)
-    }
-    
-    public func updateViews(inner: some View, sheet: some View) {
-        innerContentViewController.update(inner)
-        sheetContentViewController.update(sheet)
-    }
-    
-    public func overrideStates(_ states: [SheetState]) {
-        let sorted = states.sorted(by: >)
-        self.states = sorted
-    }
-    
-    public func overrideAnimationValues(timing: CGFloat = 0.1,
-                                        options: UIView.AnimationOptions = [.curveLinear],
-                                        springDamping: CGFloat = 2.0,
-                                        springVelocity: CGFloat = 7.0) {
-        self.animationConfig = AnimationConfig(timing: timing,
-                                               options: options,
-                                               springDamping: springDamping,
-                                               springVelocity: springVelocity)
-    }
-    
-    public func updateSheet(shouldBlur: Bool, backgroundColor: UIColor) {
-        self.blurEffectEnabled = shouldBlur
-        
-        if shouldBlur {
-            addBlur(to: sheetView)
-        } else {
-            removeBlur()
-        }
-     
-        sheetView.backgroundColor = backgroundColor
-    }
-    
-    public func getAdjustedHeight() -> CGFloat {
-        return currentState.rawValue * view.frame.height
-    }
-}
-
-// MARK: Public helper methods
-extension CoverSheetController {
-    private func removeBlur() {
-        handlePadding.alpha = 1.0
-        blurEffect.removeFromSuperview()
-    }
-    
-    private func addBlur(to view: UIView) {
-        if !view.subviews.contains(blurEffect) {
-            setupBlurEffect(in: view)
-        }
-    }
-}
-
-// MARK: Gesture Recognizer Logic
-extension CoverSheetController {
     private func setupGestureRecognizer(for view: UIView) {
         let gesture = UIPanGestureRecognizer(target: self,
                                              action: #selector(panGesture))
@@ -227,9 +177,8 @@ extension CoverSheetController {
             
             let frameHeight = view.frame.height
             let maxHeight = abs(frameHeight - (frameHeight * (states.last?.rawValue ?? 0.0)))
-            let minHeight = abs(frameHeight - (frameHeight * (states.first?.rawValue ?? 0.0)))
             
-            guard offset >= maxHeight && offset <= minHeight
+            guard offset >= maxHeight
             else {
                 let sheetPoint = CGPoint(x: sheetView.frame.minX, y: view.frame.height - sheetView.frame.minY)
                 findNearestState(sheetPoint)
@@ -253,9 +202,12 @@ extension CoverSheetController {
     }
     
     private func cycleStates(_ velocity: CGPoint) {
+        guard let current = manager.currentState as? EnumValue
+        else { return }
+        
         let direction = velocity.y
         
-        var position = states.firstIndex(of: currentState) ?? 0
+        var position = states.firstIndex(of: current) ?? 0
         
         if direction < 0 {
             position = position == states.count-1 ? position : (position+1)
@@ -263,12 +215,17 @@ extension CoverSheetController {
             position = position == 0 ? position : (position-1)
         }
         
-        currentState = states[position]
+        guard let newState = states[position] as? ViewManager.EnumValue
+        else { return }
+        
+        manager.currentState = newState
     }
     
     private func findNearestState(_ point: CGPoint) {
         var min: CGFloat = CGFloat(Int.max)
-        var finalState: SheetState = currentState
+        
+        guard var finalState: EnumValue = manager.currentState as? EnumValue
+        else { return }
         
         states.forEach {
             let height = view.frame.height * $0.rawValue
@@ -281,7 +238,93 @@ extension CoverSheetController {
             }
         }
         
-        currentState = finalState
+        guard let final = finalState as? ViewManager.EnumValue
+        else { return }
+        
+        manager.currentState = final
+    }
+}
+
+// MARK: Public methods
+extension CoverSheetController {
+    
+    public func configure(inner: UIViewController, sheet: UIViewController) {
+        innerContentViewController.configure(inner)
+        sheetContentViewController.configure(sheet)
+    }
+    
+    public func configure(inner: some View, sheet: some View) {
+        innerContentViewController.configure(inner)
+        sheetContentViewController.configure(sheet)
+    }
+    
+    public func updateViews(inner: some View, sheet: some View) {
+        innerContentViewController.update(inner)
+        sheetContentViewController.update(sheet)
+    }
+    
+    /** Update the current state.  If the state is not present in the state array, it'll add the value and sort the new state array. */
+    public func updateCurrentState(_ newState: EnumValue) {
+        guard let updateValue = newState as? ViewManager.EnumValue
+        else { return }
+        
+        if states.contains(newState) {
+            self.manager.currentState = updateValue
+        } else {
+            states.append(newState)
+            states = states.sorted(by: { $0.rawValue < $1.rawValue })
+            self.manager.currentState = updateValue
+        }
+    }
+    
+    public func overrideManager(_ manager: ViewManager) {
+        self.manager = manager
+        setupObservers()
+    }
+    
+    public func overrideStates(_ states: [EnumValue]) {
+        let sorted = states.sorted(by: { $0.rawValue < $1.rawValue })
+        self.states = sorted
+    }
+    
+    public func overrideAnimationConfig(_ config: AnimationConfig) {
+        self.animationConfig = config
+    }
+    
+    public func overrideAnimationValues(timing: CGFloat = 0.1,
+                                        options: UIView.AnimationOptions = [.curveLinear],
+                                        springDamping: CGFloat = 2.0,
+                                        springVelocity: CGFloat = 7.0) {
+        self.animationConfig = AnimationConfig(timing: timing,
+                                               options: options,
+                                               springDamping: springDamping,
+                                               springVelocity: springVelocity)
+    }
+    
+    public func updateSheet(shouldBlur: Bool, backgroundColor: UIColor) {
+        self.blurEffectEnabled = shouldBlur
+        
+        if shouldBlur {
+            addBlur(to: sheetView)
+        } else {
+            removeBlur()
+        }
+        
+        sheetView.backgroundColor = backgroundColor
+    }
+}
+
+// MARK: Public helper methods
+extension CoverSheetController {
+    private func removeBlur() {
+        handlePadding.alpha = 1.0
+        blurEffect.removeFromSuperview()
+    }
+    
+    private func addBlur(to view: UIView) {
+        if !view.subviews.contains(blurEffect) {
+            setupBlurEffect(in: view)
+        }
     }
 }
 
@@ -293,7 +336,7 @@ extension CoverSheetController {
                        delay: 0,
                        usingSpringWithDamping: animationConfig.springDamping,
                        initialSpringVelocity: animationConfig.springVelocity,
-                       options: animationConfig.options) { [currentState, sheetView, superFrame = view.frame] in
+                       options: animationConfig.options) { [currentState = manager.currentState, sheetView, superFrame = view.frame] in
             let finalHeight = (superFrame.height) * currentState.rawValue
             let diffHeight = superFrame.height - finalHeight
             sheetView.frame = CGRect(x: 0, y: diffHeight, width: superFrame.width, height: superFrame.height)
@@ -303,9 +346,9 @@ extension CoverSheetController {
             
             DispatchQueue.main.async {
                 self.isTransitioning = false
-                if self.currentState == .cover && self.sheetView.layer.cornerRadius > 0 {
+                if self.manager.currentState.rawValue == 1.0 && self.sheetView.layer.cornerRadius > 0 {
                     self.animateAllCorners(from: 16.0, to: 0.0, duration: timing)
-                } else if self.currentState != .cover {
+                } else if self.manager.currentState.rawValue != 1.0 {
                     if self.sheetView.layer.cornerRadius == 0 {
                         self.animateAllCorners(from: 0.0, to: 16.0, duration: timing)
                     }
@@ -381,12 +424,12 @@ extension CoverSheetController {
         handlePadding.translatesAutoresizingMaskIntoConstraints = false
         
         let handleHeight = NSLayoutConstraint(item: handlePadding,
-                               attribute: .height,
-                               relatedBy: .equal,
-                               toItem: nil,
-                               attribute: .notAnAttribute,
-                               multiplier: 1,
-                               constant: 15)
+                                              attribute: .height,
+                                              relatedBy: .equal,
+                                              toItem: nil,
+                                              attribute: .notAnAttribute,
+                                              multiplier: 1,
+                                              constant: 15)
         
         handleHeight.priority = .defaultLow
         
@@ -464,5 +507,10 @@ extension CoverSheetController {
     
     private func setupBottomSheet() {
         self.view.addSubview(sheetView)
+        let frameHeight = view.frame.height * manager.currentState.rawValue
+        sheetView.frame = CGRect(x: 0,
+                                 y: view.frame.height - frameHeight,
+                                 width: view.frame.width,
+                                 height: view.frame.height)
     }
 }

@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4236CA1CDB79C99D8A7A677D1481DEF2 /* Containable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6003578B59F6FEE4EDD618EF86F8C /* Containable.swift */; };
-		53B06822620F8C9FDFCDA071D4AAB23B /* CoverSheet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 64539879312BB415D71ED9E7DC875F5A /* CoverSheet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		56757676357B6ADED90804FB46D065D1 /* DefaultSheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72F6C681FD6050B2F54E4975B2A057 /* DefaultSheetManager.swift */; };
+		28291421971CA062F5A7CB6EB036AEC3 /* Color+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B7E9BB6D75629AD5DC8DE605CE55FF /* Color+UIColor.swift */; };
+		38792F51569CE3FFD9C7F882A4408D42 /* AnimationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D160A00860339FC2412C90B281390F /* AnimationConfig.swift */; };
+		3F8A7204AB6B773FDC76ADC19B263696 /* CoverSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDF70F862D23248DC2C555692215B86 /* CoverSheetDelegate.swift */; };
+		429094756C96D79CE0780155CE135C62 /* DefaultSheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82668EA92D90C08BBD55BDC471DD017E /* DefaultSheetManager.swift */; };
+		4F6F1DEB70084750056B72234B73DE05 /* CoverSheet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87B874FAC0FC16A5227331EC6802CF4D /* CoverSheet-dummy.m */; };
+		53B06822620F8C9FDFCDA071D4AAB23B /* CoverSheet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 517898C001E31B6CDE049545A44E570C /* CoverSheet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5CA09DFBDE33D72C5E51F2F64EC77F2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		5F37FFFF7EED8EF0F80D4DBDC233A82E /* CoverSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0976BB5B603ED453CB02B354D8A1E14E /* CoverSheetDelegate.swift */; };
-		81093A882E8422653C85FA7F9FBA3241 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F849D24EB4BE5203F735F7EC8642F9 /* Manager.swift */; };
+		6536FD100C03CA6F1D86725210190EEF /* CoverSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBDF0BF9E6379AE4B8DCB64256BB76 /* CoverSheetController.swift */; };
 		A460AAD901C8EA3663CAC4DBF3D20807 /* Pods-CoverSheet-UIKit-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 517D6B8F1A303C4432B26920862CB860 /* Pods-CoverSheet-UIKit-Example-dummy.m */; };
+		A801075E84D6C55310A8AB57E4CD52DA /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D511803A961EA2876401FB08C58451BE /* Manager.swift */; };
 		ACA24E03FD66582ABC05FE57846174BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		BD2431433374C1E5CE91D7FDAADFBEE3 /* Color+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4730B8CFC7E7D037E8A748BF56228E5 /* Color+UIColor.swift */; };
 		C3C3C0FA22E340F7FD87C93AA21DF8B1 /* Pods-CoverSheet-UIKit-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 80CBEFA299F891C08B6A8E9538170EB1 /* Pods-CoverSheet-UIKit-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CEA75172A527DC46E896706AD6E6C46B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12D034C667F152CA0BA619A57C5674 /* ContainerViewController.swift */; };
-		D763E59B9CE2FB8C8BEFBEB366D953B7 /* SheetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B822D65C71707E7E6ACC5F9717DA7A /* SheetState.swift */; };
-		D8AF2CC62D512AA337187652A444CDE5 /* AnimationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D890E0D1600270AD62DDE547EBAA0561 /* AnimationConfig.swift */; };
-		DB196F04F2CA03BF1F890601BE94AA4C /* CoverSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E54CCD8C44A37AD0E2B1E20BE8EFB2 /* CoverSheetController.swift */; };
-		DD9C8A9C3EEE485A608B6727CD95FEF7 /* CoverSheet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E26BE4D3B2D515670A36C0B5B9B23BFF /* CoverSheet-dummy.m */; };
-		F59601330776E21C23A84175520DF9DE /* CoverSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3183F00E596734A244A2B90B2A962B0A /* CoverSheetView.swift */; };
+		CC283E701459133F0110B1EA97CCB1F6 /* CoverSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B0337E340F062D2502015B639DB3DD /* CoverSheetView.swift */; };
+		CCD345B7057AB5B7BC83BCE39654E150 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E911D4BF53C9049B94552DEB2F250F8 /* ContainerViewController.swift */; };
+		E22253DE15D2656AC9D8AD1479BC9FF1 /* Containable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445DD7E4FAD54F9EBF14A3B4B22A6D2D /* Containable.swift */; };
+		E810458A876BC38C9E56149030F1C2B9 /* DefaultSheetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3174944D299C99F5D60FF643D673FB98 /* DefaultSheetState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,36 +36,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02F849D24EB4BE5203F735F7EC8642F9 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Sources/CoverSheet/Protocols/Manager.swift; sourceTree = "<group>"; };
-		0976BB5B603ED453CB02B354D8A1E14E /* CoverSheetDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoverSheetDelegate.swift; path = Sources/CoverSheet/Protocols/CoverSheetDelegate.swift; sourceTree = "<group>"; };
+		0067BABAA94F1694C99E893FB8E3DCC2 /* CoverSheet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CoverSheet.debug.xcconfig; sourceTree = "<group>"; };
 		19FB266F4EE33809462ED1A5601C0038 /* Pods-CoverSheet-UIKit-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CoverSheet-UIKit-Example.modulemap"; sourceTree = "<group>"; };
-		1F12D034C667F152CA0BA619A57C5674 /* ContainerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = "Sources/CoverSheet/Helper Views/ContainerViewController.swift"; sourceTree = "<group>"; };
+		233DA5F32E97AF63BDD937CD3BAC0795 /* CoverSheet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CoverSheet.modulemap; sourceTree = "<group>"; };
 		2601E3DC3C2BF62C461D7674ECC4B33D /* Pods-CoverSheet-UIKit-Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoverSheet-UIKit-Example-frameworks.sh"; sourceTree = "<group>"; };
-		2C1869A888C97468E2FAB6B2B8F9EB6F /* CoverSheet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CoverSheet.release.xcconfig; sourceTree = "<group>"; };
-		3183F00E596734A244A2B90B2A962B0A /* CoverSheetView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoverSheetView.swift; path = Sources/CoverSheet/CoverSheetView.swift; sourceTree = "<group>"; };
-		356B270F73D750C5A2BF118A64258C72 /* CoverSheet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CoverSheet-prefix.pch"; sourceTree = "<group>"; };
-		44B822D65C71707E7E6ACC5F9717DA7A /* SheetState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SheetState.swift; path = Sources/CoverSheet/SheetState.swift; sourceTree = "<group>"; };
+		2E911D4BF53C9049B94552DEB2F250F8 /* ContainerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = "Sources/CoverSheet/Helper Views/ContainerViewController.swift"; sourceTree = "<group>"; };
+		3174944D299C99F5D60FF643D673FB98 /* DefaultSheetState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultSheetState.swift; path = Sources/CoverSheet/DefaultSheetState.swift; sourceTree = "<group>"; };
+		445DD7E4FAD54F9EBF14A3B4B22A6D2D /* Containable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Containable.swift; path = Sources/CoverSheet/Protocols/Containable.swift; sourceTree = "<group>"; };
 		462110B3F736ADD1CA92E469A497856A /* Pods-CoverSheet-UIKit-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoverSheet-UIKit-Example.release.xcconfig"; sourceTree = "<group>"; };
+		517898C001E31B6CDE049545A44E570C /* CoverSheet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CoverSheet-umbrella.h"; sourceTree = "<group>"; };
 		517D6B8F1A303C4432B26920862CB860 /* Pods-CoverSheet-UIKit-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoverSheet-UIKit-Example-dummy.m"; sourceTree = "<group>"; };
+		52B0337E340F062D2502015B639DB3DD /* CoverSheetView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoverSheetView.swift; path = Sources/CoverSheet/CoverSheetView.swift; sourceTree = "<group>"; };
 		568E13B61FEB6E6D2B02052D80D98117 /* Pods-CoverSheet-UIKit-Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CoverSheet-UIKit-Example"; path = Pods_CoverSheet_UIKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		64539879312BB415D71ED9E7DC875F5A /* CoverSheet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CoverSheet-umbrella.h"; sourceTree = "<group>"; };
 		64713D0705B3B9C18DB3249710C1B60D /* Pods-CoverSheet-UIKit-Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoverSheet-UIKit-Example-Info.plist"; sourceTree = "<group>"; };
 		6A33B906C03C181FEC49E820A576FC0B /* CoverSheet */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CoverSheet; path = CoverSheet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7A265416DAD735773129D7EB7A8D5711 /* CoverSheet-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CoverSheet-Info.plist"; sourceTree = "<group>"; };
+		78CBDF0BF9E6379AE4B8DCB64256BB76 /* CoverSheetController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoverSheetController.swift; path = Sources/CoverSheet/CoverSheetController.swift; sourceTree = "<group>"; };
+		7DDF70F862D23248DC2C555692215B86 /* CoverSheetDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoverSheetDelegate.swift; path = Sources/CoverSheet/Protocols/CoverSheetDelegate.swift; sourceTree = "<group>"; };
 		80CBEFA299F891C08B6A8E9538170EB1 /* Pods-CoverSheet-UIKit-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoverSheet-UIKit-Example-umbrella.h"; sourceTree = "<group>"; };
 		8237529C32C92F179A5A8860208DC66C /* Pods-CoverSheet-UIKit-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoverSheet-UIKit-Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		89E54CCD8C44A37AD0E2B1E20BE8EFB2 /* CoverSheetController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoverSheetController.swift; path = Sources/CoverSheet/CoverSheetController.swift; sourceTree = "<group>"; };
+		82668EA92D90C08BBD55BDC471DD017E /* DefaultSheetManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultSheetManager.swift; path = Sources/CoverSheet/Helpers/DefaultSheetManager.swift; sourceTree = "<group>"; };
+		87B874FAC0FC16A5227331EC6802CF4D /* CoverSheet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CoverSheet-dummy.m"; sourceTree = "<group>"; };
+		9265F3C543428796C79EE699E4D79A72 /* CoverSheet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CoverSheet-prefix.pch"; sourceTree = "<group>"; };
 		94D64BFFE54A1F4DFA2F124DF76A87D2 /* Pods-CoverSheet-UIKit-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoverSheet-UIKit-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B4730B8CFC7E7D037E8A748BF56228E5 /* Color+UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Color+UIColor.swift"; path = "Sources/CoverSheet/Extensions/Color+UIColor.swift"; sourceTree = "<group>"; };
-		B8291FC7BF5512422E0B82771443F3F1 /* CoverSheet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CoverSheet.debug.xcconfig; sourceTree = "<group>"; };
-		BB72F6C681FD6050B2F54E4975B2A057 /* DefaultSheetManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultSheetManager.swift; path = Sources/CoverSheet/Helpers/DefaultSheetManager.swift; sourceTree = "<group>"; };
+		BB85C11B01FFA900C979DA9A250F1EC7 /* CoverSheet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CoverSheet.release.xcconfig; sourceTree = "<group>"; };
 		BF076E3EBF19C126DFA8E34F5680F777 /* Pods-CoverSheet-UIKit-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoverSheet-UIKit-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D890E0D1600270AD62DDE547EBAA0561 /* AnimationConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationConfig.swift; path = Sources/CoverSheet/Helpers/AnimationConfig.swift; sourceTree = "<group>"; };
-		DCB6003578B59F6FEE4EDD618EF86F8C /* Containable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Containable.swift; path = Sources/CoverSheet/Protocols/Containable.swift; sourceTree = "<group>"; };
-		E26BE4D3B2D515670A36C0B5B9B23BFF /* CoverSheet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CoverSheet-dummy.m"; sourceTree = "<group>"; };
-		E4E42F5DE363F4CED75B69D777497405 /* CoverSheet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CoverSheet.modulemap; sourceTree = "<group>"; };
+		C3B7E9BB6D75629AD5DC8DE605CE55FF /* Color+UIColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Color+UIColor.swift"; path = "Sources/CoverSheet/Extensions/Color+UIColor.swift"; sourceTree = "<group>"; };
+		D511803A961EA2876401FB08C58451BE /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Sources/CoverSheet/Protocols/Manager.swift; sourceTree = "<group>"; };
+		F3D160A00860339FC2412C90B281390F /* AnimationConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationConfig.swift; path = Sources/CoverSheet/Helpers/AnimationConfig.swift; sourceTree = "<group>"; };
+		F4394CDCA2DBC8ECED88CBB3BE6D19EE /* CoverSheet-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CoverSheet-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,7 @@
 		0EA26438A0BFC7D4D12461DED929B1C6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3471A436C5A540D2F34D2EC4B2D64301 /* CoverSheet */,
+				924A768E3B4C08EBBE001F43DE706595 /* CoverSheet */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -105,25 +105,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3471A436C5A540D2F34D2EC4B2D64301 /* CoverSheet */ = {
-			isa = PBXGroup;
-			children = (
-				D890E0D1600270AD62DDE547EBAA0561 /* AnimationConfig.swift */,
-				B4730B8CFC7E7D037E8A748BF56228E5 /* Color+UIColor.swift */,
-				DCB6003578B59F6FEE4EDD618EF86F8C /* Containable.swift */,
-				1F12D034C667F152CA0BA619A57C5674 /* ContainerViewController.swift */,
-				89E54CCD8C44A37AD0E2B1E20BE8EFB2 /* CoverSheetController.swift */,
-				0976BB5B603ED453CB02B354D8A1E14E /* CoverSheetDelegate.swift */,
-				3183F00E596734A244A2B90B2A962B0A /* CoverSheetView.swift */,
-				BB72F6C681FD6050B2F54E4975B2A057 /* DefaultSheetManager.swift */,
-				02F849D24EB4BE5203F735F7EC8642F9 /* Manager.swift */,
-				44B822D65C71707E7E6ACC5F9717DA7A /* SheetState.swift */,
-				9322E16E6567B0B91A10AB01AF19E910 /* Support Files */,
-			);
-			name = CoverSheet;
-			path = CoverSheet;
-			sourceTree = "<group>";
-		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,19 +113,23 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		9322E16E6567B0B91A10AB01AF19E910 /* Support Files */ = {
+		924A768E3B4C08EBBE001F43DE706595 /* CoverSheet */ = {
 			isa = PBXGroup;
 			children = (
-				E4E42F5DE363F4CED75B69D777497405 /* CoverSheet.modulemap */,
-				E26BE4D3B2D515670A36C0B5B9B23BFF /* CoverSheet-dummy.m */,
-				7A265416DAD735773129D7EB7A8D5711 /* CoverSheet-Info.plist */,
-				356B270F73D750C5A2BF118A64258C72 /* CoverSheet-prefix.pch */,
-				64539879312BB415D71ED9E7DC875F5A /* CoverSheet-umbrella.h */,
-				B8291FC7BF5512422E0B82771443F3F1 /* CoverSheet.debug.xcconfig */,
-				2C1869A888C97468E2FAB6B2B8F9EB6F /* CoverSheet.release.xcconfig */,
+				F3D160A00860339FC2412C90B281390F /* AnimationConfig.swift */,
+				C3B7E9BB6D75629AD5DC8DE605CE55FF /* Color+UIColor.swift */,
+				445DD7E4FAD54F9EBF14A3B4B22A6D2D /* Containable.swift */,
+				2E911D4BF53C9049B94552DEB2F250F8 /* ContainerViewController.swift */,
+				78CBDF0BF9E6379AE4B8DCB64256BB76 /* CoverSheetController.swift */,
+				7DDF70F862D23248DC2C555692215B86 /* CoverSheetDelegate.swift */,
+				52B0337E340F062D2502015B639DB3DD /* CoverSheetView.swift */,
+				82668EA92D90C08BBD55BDC471DD017E /* DefaultSheetManager.swift */,
+				3174944D299C99F5D60FF643D673FB98 /* DefaultSheetState.swift */,
+				D511803A961EA2876401FB08C58451BE /* Manager.swift */,
+				D45E805A63CD2AC72D842CBEA5CD9707 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/CoverSheet";
+			name = CoverSheet;
+			path = CoverSheet;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -164,6 +149,21 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D45E805A63CD2AC72D842CBEA5CD9707 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				233DA5F32E97AF63BDD937CD3BAC0795 /* CoverSheet.modulemap */,
+				87B874FAC0FC16A5227331EC6802CF4D /* CoverSheet-dummy.m */,
+				F4394CDCA2DBC8ECED88CBB3BE6D19EE /* CoverSheet-Info.plist */,
+				9265F3C543428796C79EE699E4D79A72 /* CoverSheet-prefix.pch */,
+				517898C001E31B6CDE049545A44E570C /* CoverSheet-umbrella.h */,
+				0067BABAA94F1694C99E893FB8E3DCC2 /* CoverSheet.debug.xcconfig */,
+				BB85C11B01FFA900C979DA9A250F1EC7 /* CoverSheet.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CoverSheet";
 			sourceTree = "<group>";
 		};
 		DED97A471DCA03EC519E04D3AEFE40CB /* Targets Support Files */ = {
@@ -237,7 +237,7 @@
 			buildConfigurationList = 0FFB904EB3076EFCF4AC294A37515C9A /* Build configuration list for PBXNativeTarget "CoverSheet" */;
 			buildPhases = (
 				5D7CD85EDD64B6DB95D9C64FCBAEAAD7 /* Headers */,
-				0C77149721E04AFCA4D658E00DF1B792 /* Sources */,
+				2EB1F742A386CB64C2CFC3EFF1F18DE5 /* Sources */,
 				C23E9479EF255F134903292D5A58B9A2 /* Frameworks */,
 				378016B8E375125D4E0D181B632B1057 /* Resources */,
 			);
@@ -296,21 +296,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0C77149721E04AFCA4D658E00DF1B792 /* Sources */ = {
+		2EB1F742A386CB64C2CFC3EFF1F18DE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8AF2CC62D512AA337187652A444CDE5 /* AnimationConfig.swift in Sources */,
-				BD2431433374C1E5CE91D7FDAADFBEE3 /* Color+UIColor.swift in Sources */,
-				4236CA1CDB79C99D8A7A677D1481DEF2 /* Containable.swift in Sources */,
-				CEA75172A527DC46E896706AD6E6C46B /* ContainerViewController.swift in Sources */,
-				DD9C8A9C3EEE485A608B6727CD95FEF7 /* CoverSheet-dummy.m in Sources */,
-				DB196F04F2CA03BF1F890601BE94AA4C /* CoverSheetController.swift in Sources */,
-				5F37FFFF7EED8EF0F80D4DBDC233A82E /* CoverSheetDelegate.swift in Sources */,
-				F59601330776E21C23A84175520DF9DE /* CoverSheetView.swift in Sources */,
-				56757676357B6ADED90804FB46D065D1 /* DefaultSheetManager.swift in Sources */,
-				81093A882E8422653C85FA7F9FBA3241 /* Manager.swift in Sources */,
-				D763E59B9CE2FB8C8BEFBEB366D953B7 /* SheetState.swift in Sources */,
+				38792F51569CE3FFD9C7F882A4408D42 /* AnimationConfig.swift in Sources */,
+				28291421971CA062F5A7CB6EB036AEC3 /* Color+UIColor.swift in Sources */,
+				E22253DE15D2656AC9D8AD1479BC9FF1 /* Containable.swift in Sources */,
+				CCD345B7057AB5B7BC83BCE39654E150 /* ContainerViewController.swift in Sources */,
+				4F6F1DEB70084750056B72234B73DE05 /* CoverSheet-dummy.m in Sources */,
+				6536FD100C03CA6F1D86725210190EEF /* CoverSheetController.swift in Sources */,
+				3F8A7204AB6B773FDC76ADC19B263696 /* CoverSheetDelegate.swift in Sources */,
+				CC283E701459133F0110B1EA97CCB1F6 /* CoverSheetView.swift in Sources */,
+				429094756C96D79CE0780155CE135C62 /* DefaultSheetManager.swift in Sources */,
+				E810458A876BC38C9E56149030F1C2B9 /* DefaultSheetState.swift in Sources */,
+				A801075E84D6C55310A8AB57E4CD52DA /* Manager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +336,7 @@
 /* Begin XCBuildConfiguration section */
 		0B4C2B998749F6F364C3F01AA64164F8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C1869A888C97468E2FAB6B2B8F9EB6F /* CoverSheet.release.xcconfig */;
+			baseConfigurationReference = BB85C11B01FFA900C979DA9A250F1EC7 /* CoverSheet.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -575,7 +575,7 @@
 		};
 		FB7E810BDDC2FDD61E1D939CBC329331 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8291FC7BF5512422E0B82771443F3F1 /* CoverSheet.debug.xcconfig */;
+			baseConfigurationReference = 0067BABAA94F1694C99E893FB8E3DCC2 /* CoverSheet.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
