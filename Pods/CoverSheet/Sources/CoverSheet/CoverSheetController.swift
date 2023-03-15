@@ -31,6 +31,8 @@ open class CoverSheetController<ViewManager: Manager,
     
     public weak var delegate: CoverSheetDelegate?
     
+    private var heightConstraint: NSLayoutConstraint?
+    
     public init(states: [EnumValue] = [],
                 shouldUseEffect: Bool = false,
                 sheetColor: UIColor = .white) {
@@ -174,6 +176,11 @@ open class CoverSheetController<ViewManager: Manager,
         
         if recognizer.state != .cancelled || recognizer.state != .ended {
             let offset = sheetView.frame.minY + point.y
+            
+            let sheetContentSize = view.frame.height - offset - 20
+//            print(view.frame.height, offset, , point.y, sheetContentViewController.view.frame.height)
+            
+            self.heightConstraint?.constant = sheetContentSize
             
             let frameHeight = view.frame.height
             let maxHeight = abs(frameHeight - (frameHeight * (states.last?.rawValue ?? 0.0)))
@@ -340,11 +347,13 @@ extension CoverSheetController {
             let finalHeight = (superFrame.height) * currentState.rawValue
             let diffHeight = superFrame.height - finalHeight
             sheetView.frame = CGRect(x: 0, y: diffHeight, width: superFrame.width, height: superFrame.height)
+            self.updateSheetConstraints()
         } completion: { [weak self, timing = animationConfig.timing] _ in
             guard let self = self
             else { return }
             
             DispatchQueue.main.async {
+                self.updateSheetConstraints()
                 self.isTransitioning = false
                 if self.manager.currentState.rawValue == 1.0 && self.sheetView.layer.cornerRadius > 0 {
                     self.animateAllCorners(from: 16.0, to: 0.0, duration: timing)
@@ -429,7 +438,7 @@ extension CoverSheetController {
                                               toItem: nil,
                                               attribute: .notAnAttribute,
                                               multiplier: 1,
-                                              constant: 15)
+                                              constant: 20)
         
         handleHeight.priority = .defaultLow
         
@@ -468,17 +477,27 @@ extension CoverSheetController {
         NSLayoutConstraint.activate(constraints)
     }
     
+    private func updateSheetConstraints() {
+        let sheetHeight = view.frame.height * manager.currentState.rawValue
+        self.heightConstraint?.constant = sheetHeight - 20
+    }
+    
     private func setupSheetControllerConst(for view: UIView) {
         guard let sheetView = sheetContentViewController.view
         else { return }
         
+        sheetView.backgroundColor = .green
+        
         sheetView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.heightConstraint = sheetView.heightAnchor.constraint(equalToConstant: sheetView.frame.height - 20)
+        heightConstraint?.priority = .defaultHigh
         
         let constraints = [
             sheetView.topAnchor.constraint(equalTo: self.handlePadding.bottomAnchor, constant: 0),
             sheetView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             sheetView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            sheetView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+            heightConstraint!
         ]
         
         NSLayoutConstraint.activate(constraints)

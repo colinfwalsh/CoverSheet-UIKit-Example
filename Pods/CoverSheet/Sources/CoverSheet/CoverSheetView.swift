@@ -12,7 +12,7 @@ import SwiftUI
 // MARK: SwiftUI ViewRepresentable
 public struct CoverSheetView<Inner: View,
                              Sheet: View,
-                             ViewManager: Manager,
+                             ViewManager: Manager & CoverSheetDelegate,
                              EnumValue: RawRepresentable & Equatable>: UIViewControllerRepresentable where EnumValue.RawValue == CGFloat {
     @ObservedObject
     private var manager: ViewManager
@@ -49,6 +49,7 @@ public struct CoverSheetView<Inner: View,
                                       states: states,
                                       shouldUseEffect: useBlurEffect,
                                       sheetColor: sheetColor)
+        vc.delegate = manager
         vc.configure(inner: inner(), sheet: sheet())
         vc.overrideAnimationConfig(animationConfig)
         return vc

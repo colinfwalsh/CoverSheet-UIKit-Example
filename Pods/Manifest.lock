@@ -2,21 +2,21 @@ PODS:
   - CoverSheet (0.1.2)
 
 DEPENDENCIES:
-  - CoverSheet (from `https://github.com/colinfwalsh/CoverSheet`, branch `main`)
+  - CoverSheet (from `https://github.com/colinfwalsh/CoverSheet`, branch `develop-cw-sheetHeightUpdate`)
 
 EXTERNAL SOURCES:
   CoverSheet:
-    :branch: main
+    :branch: develop-cw-sheetHeightUpdate
     :git: https://github.com/colinfwalsh/CoverSheet
 
 CHECKOUT OPTIONS:
   CoverSheet:
-    :commit: 495cfd418ef16fd84c91a9e56a18669dd942e47f
+    :commit: bf5a1f86aff753d9f62e19e512304f88ce5c3f40
     :git: https://github.com/colinfwalsh/CoverSheet
 
 SPEC CHECKSUMS:
   CoverSheet: 666c31abd1397ee848f2d50ed3eb29b26228f622
 
-PODFILE CHECKSUM: 36d872246534e38eca7b2aad81955597ada3ab96
+PODFILE CHECKSUM: 4dfeb2d61a4136f9d32740aab42910a23596c97a
 
 COCOAPODS: 1.12.0

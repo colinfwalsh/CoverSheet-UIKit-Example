@@ -6,6 +6,6 @@ target 'CoverSheet-UIKit-Example' do
   use_frameworks!
 
   # Pods for CoverSheet-UIKit-Example
-  pod 'CoverSheet', :git => 'https://github.com/colinfwalsh/CoverSheet', :branch => 'main'
+  pod 'CoverSheet', :git => 'https://github.com/colinfwalsh/CoverSheet', :branch => 'develop-cw-sheetHeightUpdate'
 
 end

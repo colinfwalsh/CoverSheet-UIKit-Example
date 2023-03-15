@@ -8,7 +8,9 @@
 import UIKit
 import CoverSheet
 
-class ViewController: CoverSheetController {
+class ViewController: CoverSheetController<DefaultSheetManager, DefaultSheetState> {
+    
+    var manager: DefaultSheetManager = DefaultSheetManager()
     
     let innerVC = UIViewController()
     let sheetVC = UIViewController()
@@ -17,7 +19,8 @@ class ViewController: CoverSheetController {
         super.viewDidLoad()
         
         configure(inner: innerVC, sheet: sheetVC)
-        overrideStates([.normal, .minimized, .cover, .full, .custom(0.1)])
+        overrideManager(manager)
+        overrideStates([.normal, .collapsed, .full, .cover])
         overrideAnimationValues(timing: 0.25, options: [.allowUserInteraction], springDamping: 1.5)
         updateSheet(shouldBlur: false, backgroundColor: .white)
     }
@@ -26,6 +29,8 @@ class ViewController: CoverSheetController {
         super.viewWillAppear(animated)
         
         innerVC.view.backgroundColor = .gray
+        
+        manager.currentState = .normal
     }
 
 }
